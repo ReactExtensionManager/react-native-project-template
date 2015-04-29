@@ -1,0 +1,9 @@
+{
+  "name": "Template",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ios.js",
+  "scripts": {
+    "start": "packager/packager.sh"
+  }
+}

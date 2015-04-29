@@ -1,0 +1,23 @@
+{
+  "name": "react-native-project-template",
+  "version": "1.0.0",
+  "description": "A project template for React Native apps, for use with rem",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReactExtensionManager/react-native-project-template.git"
+  },
+  "keywords": [
+    "react-native",
+    "template",
+    "rem"
+  ],
+  "author": "James Ide",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReactExtensionManager/react-native-project-template/issues"
+  },
+  "homepage": "https://github.com/ReactExtensionManager/react-native-project-template#readme"
+}

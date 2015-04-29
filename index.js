@@ -5,15 +5,30 @@ const ncp = require('ncp');
 const path = require('path');
 const replaceStream = require('replacestream');
 
-function installTemplateAsync(directory, projectName) {
-  var templatePath = path.join(__dirname, 'Template');
-  return ncpAsync(templatePath, directory, {
-    rename: function(dest) {
-      return dest.replace('Template', projectName, 'g');
-    },
-    transform: function(read, write) {
-      read.pipe(replaceStream('Template', projectName)).pipe(write);
-    },
+function createProjectAsync(directory, projectName) {
+  let projectDirectory = path.join(directory, projectName);
+  return mkdirAsync(projectDirectory).then(function() {
+    let templatePath = path.join(__dirname, 'Template');
+    return ncpAsync(templatePath, projectDirectory, {
+      rename: function(dest) {
+        return dest.replace('Template', projectName, 'g');
+      },
+      transform: function(read, write) {
+        read.pipe(replaceStream('Template', projectName)).pipe(write);
+      },
+    });
+  });
+}
+
+function mkdirAsync(path, mode) {
+  return new Promise(function(resolve, reject) {
+    fs.mkdir(path, mode, function(error) {
+      if (error == null) {
+        resolve();
+      } else {
+        reject(error);
+      }
+    });
   });
 }
 
@@ -29,4 +44,4 @@ function ncpAsync(source, destination, options) {
   });
 }
 
-exports.installTemplateAsync = installTemplateAsync;
+exports.createProjectAsync = createProjectAsync;

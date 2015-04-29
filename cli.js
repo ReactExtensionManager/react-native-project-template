@@ -16,11 +16,11 @@ if (argv._.length !== 1) {
   process.exit(1);
 }
 
-const installTemplateAsync = require('./index').installTemplateAsync;
+const createProjectAsync = require('./index').createProjectAsync;
 
 var destinationDirectory = argv._[0];
 var projectName = argv.name || 'App';
-installTemplateAsync(destinationDirectory, projectName).then(function() {
+createProjectAsync(destinationDirectory, projectName).then(function() {
   console.log('Created %s at %s', projectName, destinationDirectory);
 }, function(error) {
   if (argv.verbose) {

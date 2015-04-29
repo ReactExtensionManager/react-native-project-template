@@ -24,7 +24,7 @@
   "homepage": "https://github.com/ReactExtensionManager/react-native-project-template#readme",
   "dependencies": {
     "minimist": "^1.1.1",
-    "ncp": "^2.0.0",
+    "ncp": "ide/ncp#patch-2",
     "replacestream": "^2.1.0"
   }
 }

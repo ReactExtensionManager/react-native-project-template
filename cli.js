@@ -1,3 +1,5 @@
+'use strict';
+
 const parseArgs = require('minimist');
 
 var argv = parseArgs(process.argv.slice(2), {

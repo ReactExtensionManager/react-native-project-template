@@ -1,3 +1,6 @@
+'use strict';
+
+const fs = require('fs');
 const ncp = require('ncp');
 const path = require('path');
 const replaceStream = require('replacestream');
